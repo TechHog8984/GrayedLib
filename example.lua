@@ -1,3 +1,5 @@
+local LIB = loadstring(game:HttpGet'https://raw.githubusercontent.com/TechHog8984/GrayedLib/main/src.lua')()
+
 local Gui = LIB:CreateGui{}
 local Section1 = Gui:CreateSection{'Section1'}
 local Section2 = Gui:CreateSection{'Section2'}
