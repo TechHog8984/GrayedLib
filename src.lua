@@ -761,201 +761,202 @@ local function GetFocusedTextbox()
 end
 
 local tweeninfo = TweenInfo.new(.5, 8)
+
+local White = Color3.new(1, 1, 1)
+local Black = Color3.new(0, 0, 0)
+
+local Themes = {
+	Light = {
+		Section = {
+			BackgroundColor3 = Color3.fromRGB(190, 190, 190),
+		},
+		Shadow = {
+			BackgroundColor3 = Color3.fromRGB(164, 164, 164),
+		},
+		Title = {
+			BackgroundColor3 = Color3.fromRGB(200, 200, 200),
+			TextColor3 = Black,
+			TextStrokeColor3 = Black,
+		},
+		Minimize = {
+			BackgroundColor3 = Color3.fromRGB(170, 170, 170),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+
+		TextBox = {
+			BackgroundColor3 = Color3.fromRGB(167, 167, 167),
+			PlaceholderColor3 = Color3.fromRGB(95, 95, 95),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		Button = {
+			BackgroundColor3 = Color3.fromRGB(131, 131, 131),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+
+		Dropdown = {
+			BackgroundColor3 = Color3.fromRGB(134, 134, 134),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		DropdownContainer = {
+			BackgroundColor3 = Color3.fromRGB(175, 175, 175),
+		},
+		DropdownIndicator = {
+			BackgroundColor3 = Color3.fromRGB(161, 161, 161),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		Option = {
+			BackgroundColor3 = Color3.fromRGB(131, 131, 131),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+
+		Keybind = {
+			BackgroundColor3 = Color3.fromRGB(158, 158, 158),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		Letter = {
+			BackgroundColor3 = Color3.fromRGB(186, 186, 186),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+
+		Label = {
+			BackgroundColor3 = Color3.fromRGB(167, 167, 167),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+
+		Slider = {
+			BackgroundColor3 = Color3.fromRGB(158, 158, 158),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		Slide = {
+			BackgroundColor3 = Color3.fromRGB(186, 186, 186),
+		},
+		SliderCircle = {
+			BackgroundColor3 = Color3.fromRGB(144, 144, 144),
+		},
+
+		Toggle = {
+			BackgroundColor3 = Color3.fromRGB(158, 158, 158),
+			TextColor3 = Color3.fromRGB(45, 45, 45),
+			TextStrokeColor3 = Black,
+		},
+		ToggleStatus = {
+			BackgroundColor3 = Color3.fromRGB(186, 186, 186),
+		},
+		ToggleCircle = {
+			BackgroundColor3 = Color3.fromRGB(144, 144, 144),
+		},
+	},
+	Dark = {
+		Section = {
+			BackgroundColor3 = Color3.fromRGB(53, 53, 53),
+		},
+		Shadow = {
+			BackgroundColor3 = Color3.fromRGB(69, 69, 69),
+		},
+		Title = {
+			BackgroundColor3 = Color3.fromRGB(47, 47, 47),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		Minimize = {
+			BackgroundColor3 = Color3.fromRGB(63, 63, 63),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+
+		TextBox = {
+			BackgroundColor3 = Color3.fromRGB(30, 30, 30),
+			PlaceholderColor3 = Color3.fromRGB(165, 165, 165),
+			TextColor3 = White,
+			TextStrokeColor3 = Black,
+		},
+		Button = {
+			BackgroundColor3 = Color3.fromRGB(24, 24, 24),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+
+		Dropdown = {
+			BackgroundColor3 = Color3.fromRGB(26, 26, 26),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		DropdownContainer = {
+			BackgroundColor3 = Color3.fromRGB(21, 21, 21),
+		},
+		DropdownIndicator = {
+			BackgroundColor3 = Color3.fromRGB(49, 49, 49),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		Option = {
+			BackgroundColor3 = Color3.fromRGB(32, 32, 32),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+
+		Keybind = {
+			BackgroundColor3 = Color3.fromRGB(28, 28, 28),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		Letter = {
+			BackgroundColor3 = Color3.fromRGB(56, 56, 56),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+
+		Label = {
+			BackgroundColor3 = Color3.fromRGB(32, 32, 32),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+
+		Slider = {
+			BackgroundColor3 = Color3.fromRGB(24, 24, 24),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		Slide = {
+			BackgroundColor3 = Color3.fromRGB(43, 43, 43),
+		},
+		SliderCircle = {
+			BackgroundColor3 = Color3.fromRGB(56, 56, 56),
+		},
+
+		Toggle = {
+			BackgroundColor3 = Color3.fromRGB(22, 22, 22),
+			TextColor3 = White,
+			TextStrokeColor3 = White,
+		},
+		ToggleStatus = {
+			BackgroundColor3 = Color3.fromRGB(53, 53, 53),
+		},
+		ToggleCircle = {
+			BackgroundColor3 = Color3.fromRGB(73, 73, 73),
+		},
+	},
+}
+
+
 function LIB:CreateGui(GuiInfo)
 	local Gui = {
 		Active = true,
 		Sections = {},
 		Connections = {},
+		Themes = Themes,
 		Theme = GuiInfo.Theme or 'Dark',
 	}
-
-	local White = Color3.new(1, 1, 1)
-	local Black = Color3.new(0, 0, 0)
-
-	local Themes = {
-		Light = {
-			Section = {
-				BackgroundColor3 = Color3.fromRGB(190, 190, 190),
-			},
-			Shadow = {
-				BackgroundColor3 = Color3.fromRGB(164, 164, 164),
-			},
-			Title = {
-				BackgroundColor3 = Color3.fromRGB(200, 200, 200),
-				TextColor3 = Black,
-				TextStrokeColor3 = Black,
-			},
-			Minimize = {
-				BackgroundColor3 = Color3.fromRGB(170, 170, 170),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-
-			TextBox = {
-				BackgroundColor3 = Color3.fromRGB(167, 167, 167),
-				PlaceholderColor3 = Color3.fromRGB(95, 95, 95),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			Button = {
-				BackgroundColor3 = Color3.fromRGB(131, 131, 131),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-
-			Dropdown = {
-				BackgroundColor3 = Color3.fromRGB(134, 134, 134),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			DropdownContainer = {
-				BackgroundColor3 = Color3.fromRGB(175, 175, 175),
-			},
-			DropdownIndicator = {
-				BackgroundColor3 = Color3.fromRGB(161, 161, 161),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			Option = {
-				BackgroundColor3 = Color3.fromRGB(131, 131, 131),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-
-			Keybind = {
-				BackgroundColor3 = Color3.fromRGB(158, 158, 158),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			Letter = {
-				BackgroundColor3 = Color3.fromRGB(186, 186, 186),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-
-			Label = {
-				BackgroundColor3 = Color3.fromRGB(167, 167, 167),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-
-			Slider = {
-				BackgroundColor3 = Color3.fromRGB(158, 158, 158),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			Slide = {
-				BackgroundColor3 = Color3.fromRGB(186, 186, 186),
-			},
-			SliderCircle = {
-				BackgroundColor3 = Color3.fromRGB(144, 144, 144),
-			},
-
-			Toggle = {
-				BackgroundColor3 = Color3.fromRGB(158, 158, 158),
-				TextColor3 = Color3.fromRGB(45, 45, 45),
-				TextStrokeColor3 = Black,
-			},
-			ToggleStatus = {
-				BackgroundColor3 = Color3.fromRGB(186, 186, 186),
-			},
-			ToggleCircle = {
-				BackgroundColor3 = Color3.fromRGB(144, 144, 144),
-			},
-		},
-		Dark = {
-			Section = {
-				BackgroundColor3 = Color3.fromRGB(53, 53, 53),
-			},
-			Shadow = {
-				BackgroundColor3 = Color3.fromRGB(69, 69, 69),
-			},
-			Title = {
-				BackgroundColor3 = Color3.fromRGB(47, 47, 47),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			Minimize = {
-				BackgroundColor3 = Color3.fromRGB(63, 63, 63),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-
-			TextBox = {
-				BackgroundColor3 = Color3.fromRGB(30, 30, 30),
-				PlaceholderColor3 = Color3.fromRGB(165, 165, 165),
-				TextColor3 = White,
-				TextStrokeColor3 = Black,
-			},
-			Button = {
-				BackgroundColor3 = Color3.fromRGB(24, 24, 24),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-
-			Dropdown = {
-				BackgroundColor3 = Color3.fromRGB(26, 26, 26),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			DropdownContainer = {
-				BackgroundColor3 = Color3.fromRGB(21, 21, 21),
-			},
-			DropdownIndicator = {
-				BackgroundColor3 = Color3.fromRGB(49, 49, 49),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			Option = {
-				BackgroundColor3 = Color3.fromRGB(32, 32, 32),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-
-			Keybind = {
-				BackgroundColor3 = Color3.fromRGB(28, 28, 28),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			Letter = {
-				BackgroundColor3 = Color3.fromRGB(56, 56, 56),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-
-			Label = {
-				BackgroundColor3 = Color3.fromRGB(32, 32, 32),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-
-			Slider = {
-				BackgroundColor3 = Color3.fromRGB(24, 24, 24),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			Slide = {
-				BackgroundColor3 = Color3.fromRGB(43, 43, 43),
-			},
-			SliderCircle = {
-				BackgroundColor3 = Color3.fromRGB(56, 56, 56),
-			},
-
-			Toggle = {
-				BackgroundColor3 = Color3.fromRGB(22, 22, 22),
-				TextColor3 = White,
-				TextStrokeColor3 = White,
-			},
-			ToggleStatus = {
-				BackgroundColor3 = Color3.fromRGB(53, 53, 53),
-			},
-			ToggleCircle = {
-				BackgroundColor3 = Color3.fromRGB(73, 73, 73),
-			},
-		},
-	}
-
-	Gui.Themes = Themes
 
 	local function ApplyObjectTheme(Object)
 		local CurrentTheme = Themes[Gui.Theme]
