@@ -1004,7 +1004,7 @@ function LIB:CreateGui(GuiInfo)
 	end
 
 	function Gui:ChangeTheme(Theme)
-		if Themes[Theme] then
+		if Gui.Themes[Theme] then
 			Gui.Theme = Theme
 			-- local Theme = Themes[Theme]
 
@@ -1017,6 +1017,9 @@ function LIB:CreateGui(GuiInfo)
 	end
 
 	local Grayed, SectionTemplate, Templates = GetGui()
+	if GuiInfo.Name or GuiInfo[1] then
+		Grayed.Name = GuiInfo.Name or GuiInfo[1];
+	end;
 
 	local ToggleTemplate = Templates.toggle
 	local ButtonTemplate = Templates.button
@@ -2001,6 +2004,7 @@ function LIB:CreateGui(GuiInfo)
 		Gui.Active = false
 		Gui = nil
 	end
+	Gui.Close = Gui.Destroy;
 
 	return Gui
 end
